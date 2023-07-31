@@ -11,15 +11,20 @@ exports.handler = async (event, context) => {
   const data = await articles
     .find(
       {},
-      { limit: 25, projection: { _id: 0, title: 1, summary: 1, pubdate: 1 } }
+      { limit: 3, projection: { _id: 0, title: 1, summary: 1, pubdate: 1 } }
     )
     .sort({ pubdate: -1 })
     .toArray();
   console.log(data);
+  const reply = {
+    data: data,
+    count: data.length,
+    message: "Hello Conn",
+  };
 
   return {
     statusCode: 200,
-    body: JSON.stringify({ message: "Hello Conn" }),
+    body: JSON.stringify(reply),
   };
 };
 
