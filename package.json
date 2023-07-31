@@ -9,7 +9,8 @@
   "author": "Art",
   "license": "MIT",
   "dependencies": {
-    "mongodb": "^5.7.0"
+    "mongodb": "^5.7.0",
+    "saslprep": "^1.0.3"
   },
   "devDependencies": {
     "eslint": "^8.46.0",
